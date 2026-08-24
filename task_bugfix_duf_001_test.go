@@ -14,4 +14,7 @@ func TestTaskBugfixDuf001SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if !sawSep && len(all) > mountinfoOptionalFields {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if !sawSep || len(all) > mountinfoOptionalFields {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

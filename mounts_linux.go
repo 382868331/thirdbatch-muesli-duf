@@ -222,7 +222,7 @@ func parseMountInfoLine(line string) (int, [11]string) {
 	}
 
 	// Handle malformed line (no "-" found).
-	if !sawSep || len(all) > mountinfoOptionalFields {
+	if !sawSep && len(all) > mountinfoOptionalFields {
 		i = mountinfoOptionalFields
 	}
 
